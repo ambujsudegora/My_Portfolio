@@ -123,3 +123,293 @@
   scrollbar-width: thin;
   scrollbar-color: cyan #111;
 }
+
+/* ==========================================
+   Smooth Theme Transition
+   ========================================== */
+html, body, section, div, nav, article, p, h1, h2, h3, h4, span, input, select, textarea {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+/* ==========================================
+   Premium Light Mode Overrides
+   ========================================== */
+
+.light-mode {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.light-mode body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Navigation Overrides */
+.light-mode nav {
+  background-color: transparent !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.light-mode nav.nav-scrolled {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02) !important;
+}
+
+.light-mode nav button,
+.light-mode nav a {
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+.light-mode nav a[href="#home"] {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.light-mode nav:not(.nav-scrolled) button {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+.light-mode nav button:hover {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Background Sections */
+.light-mode #home,
+.light-mode #skills,
+.light-mode #testimonials,
+.light-mode footer {
+  background-color: #ffffff !important;
+}
+
+.light-mode #about,
+.light-mode #competitive,
+.light-mode #achievement,
+.light-mode #projects,
+.light-mode #certification,
+.light-mode #experience,
+.light-mode #contact {
+  background-color: #f8fafc !important;
+}
+
+/* Text Adjustments */
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6,
+.light-mode .text-white,
+.light-mode .text-white\/95,
+.light-mode .text-white\/70,
+.light-mode .text-white\/90 {
+  color: #0f172a !important;
+}
+
+.light-mode p,
+.light-mode .text-gray-200,
+.light-mode .text-gray-300,
+.light-mode .text-gray-400 {
+  color: #334155 !important;
+}
+
+.light-mode .text-gray-500 {
+  color: #64748b !important;
+}
+
+/* Cards & Containers */
+.light-mode .bg-white\/5,
+.light-mode .bg-white\/\[0\.04\],
+.light-mode .bg-white\/\[0\.045\],
+.light-mode .bg-white\/\[0\.055\],
+.light-mode .bg-white\/\[0\.08\],
+.light-mode .bg-white\/\[0\.02\],
+.light-mode .bg-white\/10 {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Timeline experienced card specific adjustments */
+.light-mode article.group {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+}
+.light-mode article.group:hover {
+  border-color: #1CD8D2 !important;
+  box-shadow: 0 10px 30px rgba(28, 216, 210, 0.08) !important;
+}
+
+/* Tag labels */
+.light-mode .bg-black\/25 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #334155 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.light-mode .bg-white\/10.animate-pulse {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Skills section scrolling marquee icons */
+.light-mode #skills .text-\[\#1cd8d2\],
+.light-mode #skills div {
+  color: #0d9488 !important; /* Premium Teal for marquee icons */
+}
+
+/* Inputs and Forms */
+.light-mode input,
+.light-mode select,
+.light-mode textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+.light-mode input:focus,
+.light-mode select:focus,
+.light-mode textarea:focus {
+  border-color: #1CD8D2 !important;
+  background-color: #ffffff !important;
+}
+
+/* Menu Overlay */
+.light-mode div[style*="rgba(0, 0, 0, 0.95)"],
+.light-mode div[style*="rgba(0,0,0,0.95)"] {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+.light-mode div[style*="rgba(0, 0, 0, 0.95)"] a,
+.light-mode div[style*="rgba(0,0,0,0.95)"] a {
+  color: #0f172a !important;
+}
+
+.light-mode div[style*="rgba(0, 0, 0, 0.95)"] button,
+.light-mode div[style*="rgba(0,0,0,0.95)"] button {
+  color: #0f172a !important;
+}
+
+/* Home Section Profile Blob */
+.light-mode div[style*="conic-gradient"] {
+  opacity: 0.12 !important;
+}
+
+/* Custom Cursor Overrides */
+.light-mode .mix-blend-difference {
+  mix-blend-mode: normal !important;
+  background: #0d9488 !important;
+}
+
+/* Bottom Stats Highlights Grid */
+.light-mode .bg-white\/\[0\.04\].p-5 {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ==========================================
+   Legibility & Contrast Overrides for Badges/Buttons
+   ========================================== */
+
+/* Target light text colors inside light mode and turn them dark teal/emerald */
+.light-mode .text-cyan-100,
+.light-mode .text-cyan-200,
+.light-mode .text-cyan-300 {
+  color: #0d9488 !important; /* Dark teal */
+}
+
+.light-mode .text-emerald-100,
+.light-mode .text-emerald-200,
+.light-mode .text-emerald-300 {
+  color: #059669 !important; /* Dark emerald */
+}
+
+/* Target matching glowing backgrounds and change to soft tint backgrounds */
+.light-mode .bg-cyan-400\/10,
+.light-mode .bg-cyan-300\/10,
+.light-mode .bg-\[\#1CD8D2\]\/10,
+.light-mode .bg-emerald-300\/10 {
+  background-color: rgba(13, 148, 136, 0.08) !important;
+}
+
+/* Target border indicators */
+.light-mode .border-cyan-400\/35,
+.light-mode .border-cyan-300\/30,
+.light-mode .border-cyan-300\/25,
+.light-mode .border-cyan-300\/20,
+.light-mode .border-cyan-400\/30,
+.light-mode .border-\[\#1CD8D2\]\/30,
+.light-mode .border-emerald-300\/20 {
+  border-color: rgba(13, 148, 136, 0.25) !important;
+}
+
+/* Button Hover State */
+.light-mode .hover\:bg-cyan-400\/20:hover {
+  background-color: rgba(13, 148, 136, 0.15) !important;
+  border-color: rgba(13, 148, 136, 0.5) !important;
+}
+
+/* ==========================================
+   Card Structure & Layering Overrides
+   ========================================== */
+
+/* Elevate and shadow all cards in Light Mode */
+.light-mode .bg-white\/5,
+.light-mode .bg-white\/\[0\.04\],
+.light-mode .bg-white\/\[0\.045\],
+.light-mode .bg-white\/\[0\.055\],
+.light-mode .bg-white\/\[0\.08\],
+.light-mode .bg-white\/\[0\.02\],
+.light-mode .bg-white\/10,
+.light-mode .bg-gradient-to-br,
+.light-mode .bg-gradient-to-b,
+.light-mode article.group {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(0, 0, 0, 0.01) !important;
+  transform: translateY(0px);
+}
+
+/* Hover Stagger Elevation for Cards */
+.light-mode .bg-white\/5:hover,
+.light-mode .bg-white\/\[0\.04\]:hover,
+.light-mode .bg-white\/\[0\.045\]:hover,
+.light-mode .bg-white\/\[0\.055\]:hover,
+.light-mode .bg-white\/\[0\.08\]:hover,
+.light-mode .bg-white\/\[0\.02\]:hover,
+.light-mode .bg-white\/10:hover,
+.light-mode article.group:hover {
+  background: #ffffff !important;
+  border-color: rgba(28, 216, 210, 0.5) !important;
+  box-shadow: 0 20px 40px -15px rgba(28, 216, 210, 0.12), 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+  transform: translateY(-5px) !important;
+}
+
+/* Testimonials: Set soft grey cards against white section background */
+.light-mode #testimonials .bg-white\/10 {
+  background: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.06) !important;
+}
+.light-mode #testimonials .bg-white\/10:hover {
+  background: #ffffff !important;
+}
+
+/* Project "View Code" Button Override */
+.light-mode .group\/btn {
+  color: #0d9488 !important;
+  background: rgba(13, 148, 136, 0.06) !important;
+  border: 1px solid rgba(13, 148, 136, 0.25) !important;
+}
+.light-mode .group\/btn:hover {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #1CD8D2 0%, #00bf8f 100%) !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 20px rgba(28, 216, 210, 0.3) !important;
+}
