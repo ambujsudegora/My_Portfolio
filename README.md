@@ -28,7 +28,7 @@ Netlify publish directory: `dist`
 
 ## Environment Variables
 
-Create a local `.env` file from `.env.example`. Do not commit real secret values.
+Create a local `.env`. Do not commit real secret values.
 
 ```env
 VITE_SERVICE_ID=
