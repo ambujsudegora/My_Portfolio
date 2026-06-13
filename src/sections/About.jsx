@@ -34,13 +34,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen w-full flex items-center justify-center relative bg-[#050505] text-white overflow-hidden py-16 lg:py-12 xl:py-20"
+      className="min-h-screen w-full flex items-center justify-center relative bg-transparent text-white overflow-hidden py-16 lg:py-12 xl:py-20"
       aria-label="About Ambuj Kumar Rai"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[120px] animate-pulse delay-700" />
-      </div>
 
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6 lg:px-10 xl:px-12 flex flex-col gap-12 xl:gap-16">
 

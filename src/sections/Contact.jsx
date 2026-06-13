@@ -58,13 +58,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full overflow-hidden bg-[#050505] px-4 py-20 text-white sm:px-6 sm:py-24"
+      className="relative w-full overflow-hidden bg-transparent px-4 py-20 text-white sm:px-6 sm:py-24"
     >
       <ParticlesBackground />
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-28 left-1/4 h-80 w-80 rounded-full bg-[#1CD8D2]/10 blur-[120px]" />
-        <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#302b63]/24 blur-[140px]" />
-      </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
         <motion.div

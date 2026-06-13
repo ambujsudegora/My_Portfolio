@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+:root {
+  --mockup-bg: rgba(0, 0, 0, 0.45);
+  --mockup-border: rgba(255, 255, 255, 0.05);
+  --mockup-bar-1: rgba(255, 255, 255, 0.1);
+  --mockup-bar-2: rgba(255, 255, 255, 0.05);
+  --mockup-text-primary: #f3f4f6;
+  --mockup-text-secondary: #9ca3af;
+  --mockup-text-muted: #6b7280;
+  --mockup-svg-circle-fill: #000000;
+  --mockup-svg-text: #ffffff;
+  --atm-bg: #040c06;
+  --atm-border: rgba(46, 200, 102, 0.2);
+  --atm-text: #2ec866;
+  --atm-text-white: #ffffff;
+  --rating-number-from: #ffffff;
+  --rating-number-to: #9ca3af;
+}
+
+::selection {
+  background-color: rgba(28, 216, 210, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.light-mode ::selection {
+  background-color: rgba(13, 148, 136, 0.25) !important;
+  color: #0f172a !important;
+}
+
 
 @keyframes gradientBG {
   0% {
@@ -127,7 +155,7 @@
 /* ==========================================
    Smooth Theme Transition
    ========================================== */
-html, body, section, div, nav, article, p, h1, h2, h3, h4, span, input, select, textarea {
+html, body, section, nav, article, input, select, textarea, .bg-white\/5, .group {
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important;
 }
 
@@ -138,6 +166,25 @@ html, body, section, div, nav, article, p, h1, h2, h3, h4, span, input, select, 
 .light-mode {
   background-color: #f8fafc !important;
   color: #0f172a !important;
+  --mockup-bg: #f1f5f9;
+  --mockup-border: rgba(15, 23, 42, 0.08);
+  --mockup-bar-1: rgba(15, 23, 42, 0.08);
+  --mockup-bar-2: rgba(15, 23, 42, 0.04);
+  --mockup-text-primary: #0f172a;
+  --mockup-text-secondary: #475569;
+  --mockup-text-muted: #64748b;
+  --mockup-svg-circle-fill: #f1f5f9;
+  --mockup-svg-text: #0f172a;
+  --atm-bg: #f4fbf7;
+  --atm-border: rgba(46, 200, 102, 0.3);
+  --atm-text: #166534;
+  --atm-text-white: #0f172a;
+  --rating-number-from: #0f172a;
+  --rating-number-to: #475569;
+}
+
+.light-mode .dark-bg-glows {
+  display: none !important;
 }
 
 .light-mode body {
@@ -414,4 +461,84 @@ html, body, section, div, nav, article, p, h1, h2, h3, h4, span, input, select, 
   background: linear-gradient(135deg, #1CD8D2 0%, #00bf8f 100%) !important;
   border-color: transparent !important;
   box-shadow: 0 8px 20px rgba(28, 216, 210, 0.3) !important;
+}
+
+/* Character Zoomer Effect */
+.char-zoom-letter {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+}
+
+/* Waving Hand Animation */
+@keyframes wave-animation {
+  0% { transform: rotate( 0.0deg) }
+  10% { transform: rotate(14.0deg) }
+  20% { transform: rotate(-8.0deg) }
+  30% { transform: rotate(14.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(10.0deg) }
+  60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
+}
+
+.animate-wave {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+/* Video Player Scanline & Glitch Effects */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.25); }
+  50% { transform: scaleY(1); }
+}
+
+.waveform-bar {
+  animation: waveform 1s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+/* ==========================================
+   Spatial 3D & Depth Utilities
+   ========================================== */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d !important;
+}
+
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+
+.translate-z-50 {
+  transform: translateZ(50px);
+}
+
+.translate-z-80 {
+  transform: translateZ(80px);
+}
+
+/* Glassmorphism futuristic card enhancements */
+.futuristic-card {
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.futuristic-card:hover {
+  border-color: rgba(28, 216, 210, 0.4) !important;
+  box-shadow: 0 0 25px rgba(28, 216, 210, 0.18), inset 0 0 10px rgba(28, 216, 210, 0.05) !important;
 }

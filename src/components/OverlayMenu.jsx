@@ -37,7 +37,7 @@ export default function OverlayMenu({ isOpen, onClose }) {
                 { label: "Projects", href: "#projects" },
                 { label: "Certification", href: "#certification" },
                 { label: "Experience", href: "#experience" },
-                { label: "Testimonials", href: "#testimonials" },
+                { label: "Education", href: "#education" },
                 { label: "Contact", href: "#contact" },
               ].map((item, index) => (
                 <motion.li

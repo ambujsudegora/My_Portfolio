@@ -77,11 +77,7 @@ function ExperienceCard({ exp, idx }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative overflow-hidden bg-[#050505] px-4 py-20 text-white sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 left-1/4 h-80 w-80 rounded-full bg-[#1CD8D2]/10 blur-[120px]" />
-        <div className="absolute bottom-16 -right-24 h-96 w-96 rounded-full bg-[#302b63]/22 blur-[140px]" />
-      </div>
+    <section id="experience" className="relative overflow-hidden bg-transparent px-4 py-20 text-white sm:px-6 sm:py-24">
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <motion.div

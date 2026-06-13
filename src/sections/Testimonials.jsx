@@ -55,7 +55,7 @@ function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-20"
+      className="relative min-h-screen bg-transparent text-white flex flex-col items-center justify-center px-6 py-20"
     >
       <MH2
         initial={{ opacity: 0, y: -50 }}

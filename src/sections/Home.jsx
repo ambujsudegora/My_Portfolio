@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
-import avatar from "../assets/avator.png";
-import ParticleBackground from "../components/ParticlesBackground";
+import robotIntro from "../assets/Ambujrobot_intro.mp4";
+import cyberAmbuj from "../assets/cyber_ambuj.png";
+import HologramCanvas from "../components/HologramCanvas";
 
 const socials = [
   {
@@ -58,6 +59,40 @@ const Home = React.forwardRef(({ introDone, ...props }, ref) => {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isPlayingVideo, setIsPlayingVideo] = useState(true);
+  const videoRef = useRef(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  const playIntroVideo = () => {
+    setIsMuted(false);
+    setIsPlayingVideo(true);
+  };
+
+  useEffect(() => {
+    if (introDone) {
+      setIsMuted(false);
+      setIsPlayingVideo(true);
+    }
+  }, [introDone]);
+
+  useEffect(() => {
+    if (isPlayingVideo && videoRef.current) {
+      videoRef.current.muted = isMuted;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn("Speech playback blocked:", err);
+        });
+      }
+    }
+  }, [isPlayingVideo, isMuted]);
 
   useEffect(() => {
     const current = roles[index];
@@ -86,14 +121,9 @@ const Home = React.forwardRef(({ introDone, ...props }, ref) => {
     <section
       ref={ref}
       id="home"
-      className="relative flex min-h-screen w-full items-center overflow-hidden bg-black py-16 lg:py-0"
+      className="relative flex min-h-screen w-full items-center overflow-hidden bg-transparent py-16 lg:py-0"
     >
-      <ParticleBackground />
-
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 -top-32 h-[50vw] w-[50vw] max-h-[500px] max-w-[500px] animate-pulse rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-20 blur-[120px]" />
-        <div className="absolute -bottom-32 -right-32 h-[50vw] w-[50vw] max-h-[500px] max-w-[500px] animate-pulse rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-25 blur-[120px] delay-500" />
-      </div>
+      <HologramCanvas />
 
       <motion.div
         variants={containerVariants}
@@ -118,7 +148,8 @@ const Home = React.forwardRef(({ introDone, ...props }, ref) => {
               </span>
               <h1 className="font-bold leading-tight">
                 <span className="block bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] bg-clip-text text-2xl text-transparent sm:text-3xl lg:text-4xl xl:text-5xl">
-                  Hi, I&apos;m
+                  Hi, I'm
+                  <span className="animate-wave ml-2 select-none inline-block origin-[70%_70%] text-3xl">👋</span>
                 </span>
                 <span className="mt-1 block text-3xl text-white sm:text-4xl lg:text-5xl xl:text-6xl">
                   Ambuj Kumar Rai
@@ -189,38 +220,99 @@ const Home = React.forwardRef(({ introDone, ...props }, ref) => {
             animate={introDone ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <motion.div
-              className="relative flex items-center justify-center"
-              style={{ perspective: 1200 }}
-            >
+            <div className="relative flex flex-col items-center justify-center w-full max-w-[440px] md:max-w-[520px] gap-6">
+              
               <motion.div
-                className="absolute rounded-full blur-[70px]"
-                style={{
-                  width: "clamp(200px, 35vw, 420px)",
-                  height: "clamp(200px, 35vw, 420px)",
-                  background: "conic-gradient(from 0deg, #1CD8D2, #00bf8f, #302b63, #1CD8D2)",
-                }}
-                animate={{ opacity: [0.25, 0.45, 0.25], scale: [1, 1.1, 1] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                whileHover={{ scale: 1.2, opacity: 0.6 }}
-              />
+                className="relative flex items-center justify-center"
+                style={{ perspective: 1200 }}
+              >
+                <motion.div
+                  className="absolute rounded-full blur-[70px]"
+                  style={{
+                    width: "clamp(200px, 35vw, 420px)",
+                    height: "clamp(200px, 35vw, 420px)",
+                    background: "conic-gradient(from 0deg, #1CD8D2, #00bf8f, #302b63, #1CD8D2)",
+                  }}
+                  animate={{ opacity: [0.25, 0.45, 0.25], scale: [1, 1.1, 1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.2, opacity: 0.6 }}
+                />
 
-              <motion.img
-                src={avatar}
-                alt="Ambuj Kumar Rai avatar"
-                className="relative z-10 object-contain select-none cursor-pointer rounded-full border border-white/10 shadow-lg"
-                style={{ width: "clamp(220px, 45vw, 520px)", maxHeight: "85vh" }}
-                animate={{ y: [0, -12, 0] }}
-                transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 3,
-                  y: -18,
-                  filter: "drop-shadow(0 0 25px rgba(28,216,210,0.6))",
-                  transition: { type: "spring", stiffness: 200 },
-                }}
-              />
-            </motion.div>
+                <motion.div
+                  className="relative z-10 overflow-hidden cursor-pointer rounded-full border border-white/10 shadow-lg bg-black/60 flex items-center justify-center aspect-square"
+                  style={{ width: "clamp(220px, 45vw, 520px)", maxHeight: "85vh" }}
+                  animate={{ y: [0, -12, 0] }}
+                  transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 3,
+                    y: -18,
+                    filter: "drop-shadow(0 0 25px rgba(28,216,210,0.6))",
+                    transition: { type: "spring", stiffness: 200 },
+                  }}
+                  onClick={isPlayingVideo ? toggleMute : playIntroVideo}
+                >
+                  {isPlayingVideo ? (
+                    <>
+                      <video
+                        ref={videoRef}
+                        key="intro-video"
+                        src={robotIntro}
+                        loop={false}
+                        onEnded={() => {
+                          setIsPlayingVideo(false);
+                          setIsMuted(true);
+                        }}
+                        muted={isMuted}
+                        playsInline
+                        className="h-full w-full object-cover select-none"
+                      />
+
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleMute();
+                        }}
+                        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 rounded-full bg-black/75 border border-white/10 px-3 py-1.5 text-xs text-white backdrop-blur-md hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shadow-lg"
+                      >
+                        {isMuted ? (
+                          <>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-red-400">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6H4.51c-.88 0-1.704.507-1.938 1.354A9.01 9.01 0 002.25 12c0 .83.112 1.633.322 2.396C2.806 15.244 3.63 15.75 4.51 15.75H6.75l4.72a.75 0 001.28-.53V3.85a.75 0 00-1.28-.53L6.75 8.25z" />
+                            </svg>
+                            <span className="text-[10px] uppercase font-semibold text-gray-200 tracking-wider">Tap for Sound</span>
+                          </>
+                        ) : (
+                          <>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-[#1cd8d2] animate-pulse">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                            </svg>
+                            <span className="text-[10px] uppercase font-semibold text-[#1cd8d2] tracking-wider">Sound On</span>
+                          </>
+                        )}
+                      </button>
+                    </>
+                  ) : (
+                    <img
+                      src={cyberAmbuj}
+                      alt="Ambuj Kumar Rai cyber likeness"
+                      className="h-full w-full object-cover select-none"
+                    />
+                  )}
+                </motion.div>
+              </motion.div>
+
+              {!isPlayingVideo && (
+                <motion.button
+                  onClick={playIntroVideo}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center justify-center rounded-full bg-gradient-to-tr from-[#1CD8D2] via-[#00bf8f] to-[#302b63] px-7 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#1CD8D2]/25 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer tracking-wider"
+                >
+                  <span>Tap for Intro</span>
+                </motion.button>
+              )}
+            </div>
           </motion.div>
 
         </div>
