@@ -195,10 +195,10 @@ export default function CompetitiveSection() {
                 className="group block relative w-full h-full"
               >
                 <TiltCard
-                  className={`relative p-6 rounded-3xl border border-neutral-200 dark:border-white/10 bg-white/80 dark:bg-white/[0.03] backdrop-blur-xl transition-all duration-300 hover:shadow-[0_0_35px_var(--hover-shadow)] ${cfg.borderColor} cursor-pointer h-full flex flex-col justify-between`}
+                  className={`relative p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:shadow-[0_0_35px_var(--hover-shadow)] ${cfg.borderColor} cursor-pointer h-full flex flex-col justify-between`}
                   style={{
                     "--hover-shadow": cfg.hoverShadow,
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.05)",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.05)",
                   }}
                 >
                   <div 
@@ -210,7 +210,7 @@ export default function CompetitiveSection() {
                     <div className="flex justify-between items-start mb-6">
                       <div className="flex items-center gap-4 translate-z-30">
                         <div 
-                          className="flex h-12 w-12 items-center justify-center rounded-2xl border border-neutral-200 dark:border-white/10 bg-neutral-100 dark:bg-white/[0.04] transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-inner"
+                          className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-inner"
                           style={{
                             color: cfg.brandColor,
                             boxShadow: "inset 0 1px 2px rgba(255,255,255,0.1)",
@@ -226,7 +226,7 @@ export default function CompetitiveSection() {
                         </div>
                       </div>
                       <div 
-                        className="p-2.5 rounded-xl border border-neutral-200 dark:border-white/5 bg-neutral-100 dark:bg-white/[0.02] text-gray-500 group-hover:text-[var(--brand-color)] group-hover:border-[var(--brand-color)]/30 transition-all duration-300"
+                        className="p-2.5 rounded-xl border border-white/5 bg-white/[0.02] text-gray-500 group-hover:text-[var(--brand-color)] group-hover:border-[var(--brand-color)]/30 transition-all duration-300"
                         style={{ "--brand-color": cfg.brandColor }}
                       >
                         <FaExternalLinkAlt size={11} />
@@ -277,7 +277,7 @@ export default function CompetitiveSection() {
           })}
         </div>
 
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white/50 dark:bg-gradient-to-r dark:from-white/[0.03] dark:via-white/[0.01] dark:to-white/[0.03] p-5 rounded-2xl border border-neutral-200 dark:border-white/10 backdrop-blur-xl">
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white/[0.02] p-5 rounded-2xl border border-white/10 backdrop-blur-xl">
           {[
             ["1,256+", "Total Solved"],
             ["Top 5%", "GFG Global"],
@@ -285,7 +285,7 @@ export default function CompetitiveSection() {
             ["384", "Striver TUF"],
           ].map(([value, label], idx) => (
             <div key={label} className="text-center group py-4 relative px-2">
-              <p className="text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white group-hover:text-[#1CD8D2] transition-colors duration-300">
+              <p className="text-3xl font-extrabold tracking-tight text-white group-hover:text-[#1CD8D2] transition-colors duration-300">
                 {value}
               </p>
               <p className="text-[10px] font-semibold uppercase text-gray-500 mt-1.5 tracking-widest">

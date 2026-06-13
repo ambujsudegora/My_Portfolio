@@ -166,10 +166,10 @@ function ProjectCard({ project }) {
       className="w-full h-full"
     >
       <TiltCard
-        className={`group relative rounded-3xl border border-neutral-200 dark:border-white/10 bg-white/80 dark:bg-white/[0.03] backdrop-blur-xl p-6 sm:p-8 flex flex-col gap-6 overflow-hidden h-full transition-all duration-300 hover:shadow-[0_0_35px_var(--hover-shadow)] ${project.borderColor}`}
+        className={`group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-8 flex flex-col gap-6 overflow-hidden h-full transition-all duration-300 hover:shadow-[0_0_35px_var(--hover-shadow)] ${project.borderColor}`}
         style={{
           "--hover-shadow": project.hoverShadow,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.05)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.05)",
         }}
       >
         <div 
@@ -188,7 +188,7 @@ function ProjectCard({ project }) {
           >
             Project {project.number}
           </span>
-          <span className="rounded-full border border-neutral-200 dark:border-white/5 bg-neutral-100 dark:bg-white/[0.02] px-3 py-1 text-[10px] text-gray-400 font-mono">
+          <span className="rounded-full border border-white/5 bg-white/[0.02] px-3 py-1 text-[10px] text-gray-400 font-mono">
             {project.metric}
           </span>
         </div>
@@ -217,7 +217,7 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        <div className="pt-4 border-t border-neutral-200 dark:border-white/5 flex items-center justify-between mt-auto relative z-10 translate-z-50">
+        <div className="pt-4 border-t border-white/5 flex items-center justify-between mt-auto relative z-10 translate-z-50">
           <motion.a
             href={project.github}
             target="_blank"

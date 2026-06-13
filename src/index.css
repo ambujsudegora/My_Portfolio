@@ -285,6 +285,12 @@ html, body, section, nav, article, input, select, textarea, .bg-white\/5, .group
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
 }
 
+.light-mode .border-white\/5,
+.light-mode .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+
 /* Timeline experienced card specific adjustments */
 .light-mode article.group {
   background-color: #ffffff !important;
