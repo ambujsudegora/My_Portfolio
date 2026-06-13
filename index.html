@@ -15,6 +15,20 @@
     content="Ambuj Kumar Rai - Software Development Engineer portfolio showcasing projects, achievements, certifications, and experience."
   />
   <title>Ambuj Kumar Rai | Portfolio</title>
+  <script>
+    const trackingId = "%VITE_GA_TRACKING_ID%";
+    if (trackingId && trackingId !== "%" + "VITE_GA_TRACKING_ID" + "%" && trackingId.trim() !== "") {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=" + trackingId;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', trackingId);
+    }
+  </script>
 </head>
 
 <body class="bg-primary">
