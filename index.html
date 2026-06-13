@@ -16,8 +16,12 @@
   />
   <title>Ambuj Kumar Rai | Portfolio</title>
   <script>
-    const trackingId = "%VITE_GA_TRACKING_ID%";
-    if (trackingId && trackingId !== "%" + "VITE_GA_TRACKING_ID" + "%" && trackingId.trim() !== "") {
+    let trackingId = "%VITE_GA_TRACKING_ID%";
+    if (!trackingId || trackingId === "%" + "VITE_GA_TRACKING_ID" + "%" || trackingId.trim() === "") {
+      trackingId = "G-TKHM3GB0V0";
+    }
+
+    if (trackingId) {
       const script = document.createElement('script');
       script.async = true;
       script.src = "https://www.googletagmanager.com/gtag/js?id=" + trackingId;
